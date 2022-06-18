@@ -22,7 +22,7 @@ pub fn soundex(text: &str) -> String {
         prevc = c;
     }
     if code.len() < CODE_LEN {
-        code.push_str("000");
+        code.push_str("0".repeat(CODE_LEN).as_str());
         code.truncate(CODE_LEN);
     }
     code
