@@ -71,13 +71,15 @@ mod tests {
     }
 
     #[test]
-    fn same_soundex() {
+    fn same_code() {
         assert_eq!(soundex("Ashcraft"), soundex("Ashcroft"));
         assert_eq!(soundex("Robert"), soundex("Rupert"));
     }
 
     #[test]
-    fn too_short() {
+    fn short_code() {
         assert_eq!(soundex("Ji"), "J000");
+        assert_eq!(soundex("Zhu"), "Z000");
+        assert_eq!(soundex("Olya"), "O400");
     }
 }
